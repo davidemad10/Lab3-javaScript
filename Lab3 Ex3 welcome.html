@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome</title>
+                
+        <script >
+            function getUsername() {
+                const urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get('username');
+            }
+            function displayWelcome() {
+            const username = getUsername();
+            if (username) {
+                document.getElementById('welcome-message').innerHTML = `Welcome, <b>${username}</b>`;
+            }
+        }
+        window.onload=displayWelcome;
+        </script>
+    </head>
+    <body>
+        <h1 id="welcome-message" style="font-size: 24px;"></h1>
+    </body>
+</html>
+
